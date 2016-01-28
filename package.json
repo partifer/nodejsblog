@@ -47,7 +47,9 @@
     "watchify": "^0.10.2",
     "yargs": "^1.2.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-nodemon": "2.0.6"
+  },
   "browser": {
     "angular": "./bower_components/angular/angular.min.js",
     "angular-ui-bootstrap": "./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",

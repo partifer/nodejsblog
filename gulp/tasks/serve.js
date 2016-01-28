@@ -1,12 +1,24 @@
 'use strict';
 
 var gulp = require('gulp');
-var connect = require('connect');
-var staticServer = connect();
 
-module.exports = gulp.task('serve', function (next) {
-  if (!release){
-    var staticServerPath = BUILD_FOLDER;
-    staticServer.use(connect.static(staticServerPath)).listen(process.env.PORT || config.ports.staticServer, next);
-  }
+module.exports = gulp.task('serve', function () {
+  if (!release)
+    {
+      var connect = require('connect'),
+          nodemon = require('gulp-nodemon');
+      var options = {
+        script: 'bin/www',
+        ext: 'js html jade',
+        tasks: ['lintExpress'],
+        ignore: [
+          "*.test.js",
+          "build/*",
+          "src/*",
+          "tmp/*"
+        ],
+        env: {'NODE_ENV': 'development'}
+      };
+      return nodemon(options);
+    }
 });
