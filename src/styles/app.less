@@ -1,22 +1,29 @@
 @import "variables";
 @import "imports";
 
+html {
+  min-height: 100%;
+  position: relative;
+}
 body {
-  text-align: center;
-  color: #222;
+  margin-bottom: 60px;
 }
-
-.welcome {
-  width: 300px;
-  height: 510px;
+.footer {
+  background-color: #f5f5f5;
+  bottom: 0;
+  height: 60px;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -150px;
-  margin-top: -255px;
+  width: 100%;
+  >.container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
-
-a, a:visited {
-  text-decoration: none;
+body > .container {
+  padding: 60px 15px 0;
 }
-
+.container {
+  .text-muted {
+    margin: 20px 0;
+  }
+}
